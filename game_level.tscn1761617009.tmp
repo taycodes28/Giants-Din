@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://lby1vefxemvt"]
+
+[ext_resource type="Script" uid="uid://dmlf3na8yo2kq" path="res://player.gd" id="1_bwyfi"]
+[ext_resource type="Texture2D" uid="uid://qhcf6khix47y" path="res://assests/tile.webp" id="1_df5pp"]
+[ext_resource type="Texture2D" uid="uid://co1agnxryhhwk" path="res://assests/thief.png" id="3_g7mx2"]
+[ext_resource type="Texture2D" uid="uid://jvwfvxtxda8t" path="res://assests/dragon-removebg-preview.png" id="4_efyo6"]
+[ext_resource type="Script" uid="uid://bh52ds5couu4o" path="res://dragon.gd" id="4_wqyo1"]
+[ext_resource type="Texture2D" uid="uid://p42aev2u86pa" path="res://assests/treasure.png" id="5_wqyo1"]
+[ext_resource type="Texture2D" uid="uid://b81k55lggrdng" path="res://assests/200.png" id="6_v7qp1"]
+[ext_resource type="Texture2D" uid="uid://ba6tvrr4274nx" path="res://assests/Basic_Door_Opening_Pixel.png" id="7_v7qp1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwyfi"]
+size = Vector2(1129, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_df5pp"]
+size = Vector2(1150.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibsu8"]
+size = Vector2(19, 632)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsd0w"]
+size = Vector2(21, 628)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8a3p6"]
+radius = 43.416588
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpbmx"]
+size = Vector2(525, 212)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7qp1"]
+size = Vector2(180, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61fi8"]
+size = Vector2(67, 78)
+
+[node name="GameLevel" type="Node2D" unique_id=724291203]
+metadata/_edit_horizontal_guides_ = [25.0]
+
+[node name="Floor" type="TextureRect" parent="." unique_id=65924001]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1158.0
+offset_bottom = 654.0
+texture = ExtResource("1_df5pp")
+stretch_mode = 1
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=574950144]
+position = Vector2(-10, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=295087553]
+position = Vector2(586, 20)
+shape = SubResource("RectangleShape2D_bwyfi")
+
+[node name="WallBottom" type="StaticBody2D" parent="." unique_id=1066912457]
+position = Vector2(0, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" unique_id=1020064074]
+position = Vector2(574.75, 40)
+shape = SubResource("RectangleShape2D_df5pp")
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=2061931087]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=1616201239]
+position = Vector2(9.5, 17)
+shape = SubResource("RectangleShape2D_ibsu8")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=8474215]
+position = Vector2(1126, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=1995488441]
+position = Vector2(26, -3)
+shape = SubResource("RectangleShape2D_qsd0w")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1741873372]
+position = Vector2(578, 325)
+script = ExtResource("1_bwyfi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1116877082]
+position = Vector2(-330.625, 155)
+scale = Vector2(3.5865386, 2.3124998)
+texture = ExtResource("3_g7mx2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1604653510]
+position = Vector2(-342, 159)
+shape = SubResource("CircleShape2D_8a3p6")
+
+[node name="Dragon" type="CharacterBody2D" parent="." unique_id=550561509]
+script = ExtResource("4_wqyo1")
+sleeping_texture = ExtResource("4_efyo6")
+awake_texture = ExtResource("6_v7qp1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Dragon" unique_id=397794688]
+position = Vector2(872.5, 162.5)
+scale = Vector2(1.98155, 1.4852072)
+texture = ExtResource("4_efyo6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dragon" unique_id=1840522044]
+position = Vector2(874.5, 170)
+shape = SubResource("RectangleShape2D_jpbmx")
+
+[node name="DetectionZone" type="Area2D" parent="Dragon" unique_id=1872559927]
+
+[node name="Treasure" type="Area2D" parent="." unique_id=504590214]
+
+[node name="Sprite2D" type="Sprite2D" parent="Treasure" unique_id=903890478]
+position = Vector2(990.99994, 350.00003)
+scale = Vector2(0.8333333, 0.68055546)
+texture = ExtResource("5_wqyo1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure" unique_id=193199034]
+position = Vector2(1003, 349.5)
+shape = SubResource("RectangleShape2D_v7qp1")
+
+[node name="ExitDoor" type="Area2D" parent="." unique_id=1767983899]
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitDoor" unique_id=174024712]
+position = Vector2(109.50001, 495.00003)
+scale = Vector2(3.21875, 2.5)
+texture = ExtResource("7_v7qp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor" unique_id=1173614991]
+position = Vector2(111.5, 494)
+shape = SubResource("RectangleShape2D_61fi8")
+
+[connection signal="body_entered" from="Dragon/DetectionZone" to="Dragon" method="_on_detection_zone_body_entered"]

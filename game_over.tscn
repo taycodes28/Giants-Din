@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cu5reyjpu348h"]
+
+[ext_resource type="Script" uid="uid://berywk1qp6bnl" path="res://label.gd" id="1_y26ei"]
+[ext_resource type="Script" uid="uid://1ijmap4rge1k" path="res://button.gd" id="2_yxx3c"]
+
+[node name="GameOver" type="Node2D" unique_id=179258914]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2090054748]
+offset_right = 1164.0
+offset_bottom = 660.0
+color = Color(0.019607844, 0, 0.05490196, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=194682051]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 251.0
+offset_right = 1013.0
+offset_bottom = 361.0
+theme_override_font_sizes/font_size = 80
+text = "SSSSSHHHHHHHHH ! !"
+script = ExtResource("1_y26ei")
+
+[node name="Button" type="Button" parent="." unique_id=756010748]
+offset_left = 452.0
+offset_top = 355.0
+offset_right = 698.0
+offset_bottom = 436.0
+theme_override_font_sizes/font_size = 53
+text = "Try Again"
+script = ExtResource("2_yxx3c")

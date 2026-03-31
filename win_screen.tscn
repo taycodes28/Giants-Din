@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c0at7bvfhe6bd"]
+
+[ext_resource type="Script" uid="uid://1ijmap4rge1k" path="res://button.gd" id="1_l2arl"]
+
+[node name="WinScreen" type="Node2D" unique_id=716127861]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1863456835]
+offset_right = 1173.0
+offset_bottom = 665.0
+color = Color(0.16078432, 0.16862746, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=2024017696]
+offset_left = 253.0
+offset_top = 289.0
+offset_right = 888.0
+offset_bottom = 344.0
+theme_override_font_sizes/font_size = 40
+text = "You escaped... without a whisper"
+
+[node name="Button" type="Button" parent="." unique_id=877787421]
+offset_left = 407.0
+offset_top = 359.0
+offset_right = 737.0
+offset_bottom = 420.0
+theme_override_font_sizes/font_size = 26
+text = "Play Again"
+script = ExtResource("1_l2arl")
